@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import App from "./App";
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
   return (
@@ -8,7 +7,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={(props) => {
         if (true) {
-          return (<App />);
+          return (<Component {...props} />);
         } else {
           return (
             <Redirect
