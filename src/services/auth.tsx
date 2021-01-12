@@ -1,5 +1,3 @@
-import React from "react";
-
 let auth = false;
 
 const login = (cb: any) => {

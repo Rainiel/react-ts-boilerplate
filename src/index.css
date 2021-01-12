@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* this is to match the height of component in views to the screen */
+/* body > #root > div { */
+  /* height: calc(); */
+/* } */

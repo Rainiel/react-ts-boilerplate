@@ -5,7 +5,10 @@ import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
 import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
+
+// Pages
 import DashboardPage from "./views/Dashboard/Dashboard";
+import DragAndDrop from "./views/DragAndDrop/DragAndDrop";
 
 const routes = [
   {
@@ -13,6 +16,13 @@ const routes = [
     name: "Dashboard",
     // icon: Dashboard,
     component: DashboardPage,
+    layout: "/layout1"
+  },
+  {
+    path: "/draganddrop",
+    name: "DragAndDrop",
+    // icon: Dashboard,
+    component: DragAndDrop,
     layout: "/layout1"
   },
   {

@@ -48,44 +48,38 @@ const Sidebar: React.FC<any> = (props) => {
 
   const { routes } = props;
 
-  React.useEffect(() => {}, []);
-
   return (
-    <div>
-      <nav className={classes.drawer}>
-        <Drawer
-          variant="permanent"
-          classes={{
-            paper: classes.drawerPaper,
-          }}
-          anchor="left"
-        >
-          <div className={classes.toolbar} />
-          <Divider />
-          <List>
-            {routes.map((route: any, index: any) => {
-              const activeItem = classNames({
-                [classes["activeRoute"]]: activeRoute(
-                  route.layout + route.path
-                ),
-              });
-              return (
-                <NavLink
-                  key={index}
-                  to={route.layout + route.path}
-                  className={classes.item}
-                >
-                  <ListItem button key={index} className={activeItem}>
-                    {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-                    <ListItemText primary={route.name} />
-                  </ListItem>
-                </NavLink>
-              );
-            })}
-          </List>
-        </Drawer>
-      </nav>
-    </div>
+    <nav className={classes.drawer}>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+      >
+        <div className={classes.toolbar} />
+        <Divider />
+        <List>
+          {routes.map((route: any, index: any) => {
+            const activeItem = classNames({
+              [classes["activeRoute"]]: activeRoute(route.layout + route.path),
+            });
+            return (
+              <NavLink
+                key={index}
+                to={route.layout + route.path}
+                className={classes.item}
+              >
+                <ListItem button key={index} className={activeItem}>
+                  {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
+                  <ListItemText primary={route.name} />
+                </ListItem>
+              </NavLink>
+            );
+          })}
+        </List>
+      </Drawer>
+    </nav>
   );
 };
 
