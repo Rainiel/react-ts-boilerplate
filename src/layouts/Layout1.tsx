@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme: Theme) =>
       marginRight: "auto",
       marginLeft: "auto",
       height: "100%",
-      borderStyle: "solid",
-      borderWidth: "5px",
-      borderColor: "black",
+      // borderStyle: "solid",
+      // borderWidth: "5px",
+      // borderColor: "black",
     },
   })
 );
