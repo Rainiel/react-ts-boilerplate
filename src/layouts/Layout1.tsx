@@ -63,9 +63,9 @@ const switchRoutes = (
     <Redirect from="/layout1" to="/layout1/dashboard" />
   </Switch>
 );
-
 const Layout1: React.FC<any> = (props) => {
   const classes = useStyles();
+
   const { location } = props;
   React.useEffect(() => {
     
