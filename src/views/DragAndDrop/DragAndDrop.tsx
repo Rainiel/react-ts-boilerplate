@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     backgroundColor: "#cccccc",
     borderRadius: "8px",
     padding: "5px",
-    height: "500px",
+    height: "175px",
   },
   item: {
     backgroundColor: "#f2f2f2",
