@@ -15,5 +15,5 @@ code {
 
 /* this is to match the height of component in views to the screen */
 body > #root {
-  height: 100vh
+  height: 100vh;
 }

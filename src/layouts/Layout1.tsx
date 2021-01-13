@@ -10,12 +10,14 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: "flex",
+      height: "100%"
     },
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
-      backgroundColor: theme.palette.background.default,
+      // backgroundColor: theme.palette.background.default,
+      backgroundColor: "#e6e6e6",
       padding: theme.spacing(3),
     },
     container: {
@@ -23,7 +25,6 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingLeft: "15px",
       marginRight: "auto",
       marginLeft: "auto",
-      height: "100%",
       // borderStyle: "solid",
       // borderWidth: "5px",
       // borderColor: "black",

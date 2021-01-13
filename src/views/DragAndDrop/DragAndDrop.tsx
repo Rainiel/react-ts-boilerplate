@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     borderRadius: "8px",
     padding: "10px",
     textAlign: "center",
-    margin: "10px"
+    margin: "10px",
   },
 });
 
@@ -38,79 +38,154 @@ const drop = (ev: any) => {
 const DragAndDrop: React.FC<any> = (props) => {
   const classes = useStyles();
   return (
-    <Grid container spacing={3}>
-      <Grid item xs>
-        <div
-          className={classes.border}
-          id="div1"
-          onDrop={(e) => drop(e)}
-          onDragOver={(e) => {
-            allowDrop(e);
-          }}
-        >
+    <div>
+      <Grid container spacing={3}>
+        <Grid item xs>
           <div
-            className={classes.item}
-            draggable="true"
-            id="drag1"
-            onDragStart={(e) => {
-              drag(e);
+            className={classes.border}
+            id="div1"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
             }}
           >
-            List Item 1
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag1"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 1
+            </div>
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag2"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 2
+            </div>
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag3"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 3
+            </div>
           </div>
+        </Grid>
+        <Grid item xs>
           <div
-            className={classes.item}
-            draggable="true"
-            id="drag2"
-            onDragStart={(e) => {
-              drag(e);
+            className={classes.border}
+            id="div2"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          ></div>
+        </Grid>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div3"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          ></div>
+        </Grid>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div4"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          ></div>
+        </Grid>
+      </Grid>
+      <Grid container spacing={3}>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div1"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
             }}
           >
-            List Item 2
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag1"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 1
+            </div>
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag2"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 2
+            </div>
+            <div
+              className={classes.item}
+              draggable="true"
+              id="drag3"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List Item 3
+            </div>
           </div>
+        </Grid>
+        <Grid item xs>
           <div
-            className={classes.item}
-            draggable="true"
-            id="drag3"
-            onDragStart={(e) => {
-              drag(e);
+            className={classes.border}
+            id="div2"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
             }}
-          >
-            List Item 3
-          </div>
-        </div>
+          ></div>
+        </Grid>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div3"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          ></div>
+        </Grid>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div4"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          ></div>
+        </Grid>
       </Grid>
-      <Grid item xs>
-        <div
-          className={classes.border}
-          id="div2"
-          onDrop={(e) => drop(e)}
-          onDragOver={(e) => {
-            allowDrop(e);
-          }}
-        ></div>
-      </Grid>
-      <Grid item xs>
-        <div
-          className={classes.border}
-          id="div3"
-          onDrop={(e) => drop(e)}
-          onDragOver={(e) => {
-            allowDrop(e);
-          }}
-        ></div>
-      </Grid>
-      <Grid item xs>
-        <div
-          className={classes.border}
-          id="div4"
-          onDrop={(e) => drop(e)}
-          onDragOver={(e) => {
-            allowDrop(e);
-          }}
-        ></div>
-      </Grid>
-    </Grid>
+    </div>
   );
 };
 

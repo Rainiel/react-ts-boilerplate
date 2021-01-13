@@ -9,6 +9,7 @@ import Notifications from "@material-ui/icons/Notifications";
 // Pages
 import DashboardPage from "./views/Dashboard/Dashboard";
 import DragAndDrop from "./views/DragAndDrop/DragAndDrop";
+import Card from "./views/Card/Card";
 
 const routes = [
   {
@@ -16,6 +17,13 @@ const routes = [
     name: "Dashboard",
     // icon: Dashboard,
     component: DashboardPage,
+    layout: "/layout1"
+  },
+  {
+    path: "/card",
+    name: "Card",
+    // icon: Dashboard,
+    component: Card,
     layout: "/layout1"
   },
   {

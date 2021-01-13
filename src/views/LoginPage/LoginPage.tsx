@@ -55,7 +55,6 @@ const LoginPage: React.FC<any> = (props) => {
                 variant="contained"
                 color="primary"
                 onClick={() => {
-                  // document.body.style.backgroundColor = "black";
                   login(() => {
                     props.history.push("/layout1");
                   });
