@@ -5,16 +5,17 @@ import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles({
   border: {
-    borderStyle: "solid",
-    borderWidth: "5px",
-    borderColor: "black",
+    backgroundColor: "#cccccc",
+    borderRadius: "8px",
+    padding: "5px",
     height: "500px",
   },
   item: {
-    borderStyle: "solid",
-    borderWidth: "5px",
-    borderColor: "black",
-    height: "100px",
+    backgroundColor: "#f2f2f2",
+    borderRadius: "8px",
+    padding: "10px",
+    textAlign: "center",
+    margin: "10px"
   },
 });
 
@@ -54,7 +55,29 @@ const DragAndDrop: React.FC<any> = (props) => {
             onDragStart={(e) => {
               drag(e);
             }}
-          ></div>
+          >
+            List Item 1
+          </div>
+          <div
+            className={classes.item}
+            draggable="true"
+            id="drag2"
+            onDragStart={(e) => {
+              drag(e);
+            }}
+          >
+            List Item 2
+          </div>
+          <div
+            className={classes.item}
+            draggable="true"
+            id="drag3"
+            onDragStart={(e) => {
+              drag(e);
+            }}
+          >
+            List Item 3
+          </div>
         </div>
       </Grid>
       <Grid item xs>
@@ -68,7 +91,7 @@ const DragAndDrop: React.FC<any> = (props) => {
         ></div>
       </Grid>
       <Grid item xs>
-      <div
+        <div
           className={classes.border}
           id="div3"
           onDrop={(e) => drop(e)}
@@ -78,7 +101,7 @@ const DragAndDrop: React.FC<any> = (props) => {
         ></div>
       </Grid>
       <Grid item xs>
-      <div
+        <div
           className={classes.border}
           id="div4"
           onDrop={(e) => drop(e)}
