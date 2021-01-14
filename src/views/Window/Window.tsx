@@ -3,13 +3,14 @@ import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
-import img from "../../assets/img/sample.jpg";
+import window from "../../assets/img/window.jpg";
 import folder from "../../assets/img/folder.png";
 import DndContainer from "../../components/dnd-container/dndcontainer";
+import DndItem from "../../components/dnd-item/dnd-item";
 
 const useStyles = makeStyles({
   border: {
-    backgroundImage: `url(${img})`,
+    backgroundImage: `url(${window})`,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -24,7 +25,6 @@ const useStyles = makeStyles({
     },
     borderRadius: "8px",
     // padding: "10px",
-    textAlign: "center",
     color: "#ffffff",
     height: "100%",
   },
@@ -49,143 +49,281 @@ const drop = (ev: any) => {
 const Window: React.FC<any> = (props) => {
   const classes = useStyles();
   return (
-    <Box height={1} width={1}>
-      <Grid container direction="row" spacing={0} style={{ height: "50%" }}>
+    <Box height={1} width={1} className={classes.border}>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
         <Grid item xs>
-          <div
-            className={classes.border}
-            id="div1"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <div
-              className={classes.item}
-              draggable="true"
-              id="draggable1"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              <img src={folder} width="50" height="50" draggable="false" />
-              List 1
-            </div>
-          </div>
+          <DndItem></DndItem>
         </Grid>
         <Grid item xs>
-          <Box
-            className={classes.border}
-            id="div2"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="flex-end"
-              className={classes.item}
-              draggable="true"
-              id="draggable2"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              <span>list 2</span>
-            </Box>
-          </Box>
+          <DndItem></DndItem>
         </Grid>
         <Grid item xs>
-          <div
-            className={classes.border}
-            id="div3"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <div
-              className={classes.item}
-              draggable="true"
-              id="draggable3"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              List 3
-            </div>
-          </div>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
         </Grid>
       </Grid>
-      <Grid container direction="row" spacing={0} style={{ height: "50%" }}>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
         <Grid item xs>
-          <div
-            className={classes.border}
-            id="div1"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <div
-              className={classes.item}
-              draggable="true"
-              id="draggable1"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              <img src={folder} width="50" height="50" draggable="false" />
-              List 1
-            </div>
-          </div>
+          <DndItem></DndItem>
         </Grid>
         <Grid item xs>
-          <Box
-            className={classes.border}
-            id="div2"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="flex-end"
-              className={classes.item}
-              draggable="true"
-              id="draggable2"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              <span>list 2</span>
-            </Box>
-          </Box>
+          <DndItem></DndItem>
         </Grid>
         <Grid item xs>
-          <div
-            className={classes.border}
-            id="div3"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <div
-              className={classes.item}
-              draggable="true"
-              id="draggable3"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              List 3
-            </div>
-          </div>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        spacing={0}
+        style={{ height: "16.6666667%" }}
+      >
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
+        </Grid>
+        <Grid item xs>
+          <DndItem></DndItem>
         </Grid>
       </Grid>
     </Box>
