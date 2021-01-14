@@ -8,19 +8,6 @@ import folder from "../../assets/img/folder.png";
 import DndContainer from "../../components/dnd-container/dndcontainer";
 
 const useStyles = makeStyles({
-  border2: {
-    backgroundColor: "#cccccc",
-    borderRadius: "8px",
-    padding: "5px",
-    height: "175px",
-  },
-  item2: {
-    backgroundColor: "#f2f2f2",
-    borderRadius: "8px",
-    padding: "10px",
-    textAlign: "center",
-    margin: "10px",
-  },
   border: {
     backgroundImage: `url(${img})`,
     backgroundPosition: "center",
@@ -28,16 +15,15 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     // backgroundColor: "#cccccc",
     borderRadius: "8px",
-    height: "100px",
+    height: "100%",
   },
   item: {
     "&:hover": {
       backgroundColor: "rgb(230, 240, 255, 0.5)",
-      // opacity: "0.5",
       color: "#ffffff",
     },
     borderRadius: "8px",
-    padding: "10px",
+    // padding: "10px",
     textAlign: "center",
     color: "#ffffff",
     height: "100%",
@@ -60,84 +46,11 @@ const drop = (ev: any) => {
   ev.target.appendChild(document.getElementById(data));
 };
 
-const DragAndDrop: React.FC<any> = (props) => {
+const Window: React.FC<any> = (props) => {
   const classes = useStyles();
   return (
-    <div>
-      <Grid container spacing={3}>
-        <Grid item xs>
-          <div
-            className={classes.border2}
-            id="div1"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          >
-            <div
-              className={classes.item2}
-              draggable="true"
-              id="drag1"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              List Item 1
-            </div>
-            <div
-              className={classes.item2}
-              draggable="true"
-              id="drag2"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              List Item 2
-            </div>
-            <div
-              className={classes.item2}
-              draggable="true"
-              id="drag3"
-              onDragStart={(e) => {
-                drag(e);
-              }}
-            >
-              List Item 3
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs>
-          <div
-            className={classes.border2}
-            id="div2"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          ></div>
-        </Grid>
-        <Grid item xs>
-          <div
-            className={classes.border2}
-            id="div3"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          ></div>
-        </Grid>
-        <Grid item xs>
-          <div
-            className={classes.border2}
-            id="div4"
-            onDrop={(e) => drop(e)}
-            onDragOver={(e) => {
-              allowDrop(e);
-            }}
-          ></div>
-        </Grid>
-      </Grid>
-      <Grid container direction="column" spacing={3}>
+    <Box height={1} width={1}>
+      <Grid container direction="row" spacing={0} style={{ height: "50%" }}>
         <Grid item xs>
           <div
             className={classes.border}
@@ -206,14 +119,77 @@ const DragAndDrop: React.FC<any> = (props) => {
           </div>
         </Grid>
       </Grid>
-      {/* <DndContainer></DndContainer>
-      <DndContainer></DndContainer>
-      <DndContainer></DndContainer>
-      <DndContainer></DndContainer>
-      <DndContainer></DndContainer>
-      <DndContainer></DndContainer> */}
-    </div>
+      <Grid container direction="row" spacing={0} style={{ height: "50%" }}>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div1"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          >
+            <div
+              className={classes.item}
+              draggable="true"
+              id="draggable1"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              <img src={folder} width="50" height="50" draggable="false" />
+              List 1
+            </div>
+          </div>
+        </Grid>
+        <Grid item xs>
+          <Box
+            className={classes.border}
+            id="div2"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          >
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="flex-end"
+              className={classes.item}
+              draggable="true"
+              id="draggable2"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              <span>list 2</span>
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs>
+          <div
+            className={classes.border}
+            id="div3"
+            onDrop={(e) => drop(e)}
+            onDragOver={(e) => {
+              allowDrop(e);
+            }}
+          >
+            <div
+              className={classes.item}
+              draggable="true"
+              id="draggable3"
+              onDragStart={(e) => {
+                drag(e);
+              }}
+            >
+              List 3
+            </div>
+          </div>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 
-export default DragAndDrop;
+export default Window;

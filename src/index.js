@@ -6,10 +6,12 @@ import { ProtectedRoute } from "./protected.route";
 import reportWebVitals from "./reportWebVitals";
 import Layout1 from "./layouts/Layout1";
 import LoginPage from "./views/LoginPage/LoginPage";
+import Window from "./views/Window/Window";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      <Route exact path="/window" component={Window} />
       <Route exact path="/" component={LoginPage} />
       <ProtectedRoute path="/layout1" component={Layout1} />
       <Route path="*" component={() => "404 NOT FOUND"} />
