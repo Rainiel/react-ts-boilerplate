@@ -2,6 +2,7 @@ import React from "react";
 import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import folder from "../../assets/img/folder.png";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles({
   border2: {
@@ -56,30 +57,14 @@ const drop = (ev: any) => {
 const DndContainer: React.FC<any> = (props) => {
   const classes = useStyles();
   return (
-    <Grid container spacing={3}>
-      <Grid item xs>
-        <div
-          className={classes.border}
-          id="div1"
-          onDrop={(e) => drop(e)}
-          onDragOver={(e) => {
-            allowDrop(e);
-          }}
-        >
-          <div
-            className={classes.item}
-            draggable="true"
-            id="draggable1"
-            onDragStart={(e) => {
-              drag(e);
-            }}
-          >
-            <img src={folder} width="50" height="50" draggable="false" />
-            List 1
-          </div>
-        </div>
-      </Grid>
-    </Grid>
+    <Box
+    id="div1"
+    height={1}
+    onDrop={(e) => drop(e)}
+    onDragOver={(e) => {
+      allowDrop(e);
+    }}
+  ></Box>
   );
 };
 

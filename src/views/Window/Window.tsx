@@ -15,7 +15,6 @@ const useStyles = makeStyles({
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     // backgroundColor: "#cccccc",
-    borderRadius: "8px",
     height: "100%",
   },
   item: {
@@ -46,286 +45,85 @@ const drop = (ev: any) => {
   ev.target.appendChild(document.getElementById(data));
 };
 
+const Item = (props: any) => {
+  return (
+    <Grid item xs>
+      <Box
+        height={1}
+        onDrop={(e) => drop(e)}
+        onDragOver={(e) => {
+          allowDrop(e);
+        }}
+      >
+        {props.children}
+      </Box>
+    </Grid>
+  );
+};
+
+const ItemContainer = (props: any) => {
+  return (
+    <Grid
+      container
+      direction="row"
+      spacing={0}
+      style={{ height: "16.6666667%" }}
+    >
+      {props.children}
+    </Grid>
+  );
+};
+
 const Window: React.FC<any> = (props) => {
   const classes = useStyles();
+  const containers = [];
+  const items = [{ r: 1, c: 2 }];
+
+  for (let i = 0; i < 6; i++) {
+    containers.push(
+      <ItemContainer key={i}>
+        <Item>
+          <DndItem id={`item`}></DndItem>
+        </Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+        <Item></Item>
+      </ItemContainer>
+    );
+  }
+
   return (
     <Box height={1} width={1} className={classes.border}>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        direction="row"
-        spacing={0}
-        style={{ height: "16.6666667%" }}
-      >
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-        <Grid item xs>
-          <DndItem></DndItem>
-        </Grid>
-      </Grid>
+      {[
+        1,2,3,4,5,6].map((x, i) => (
+          <ItemContainer key={i}>
+          <Item>
+            <DndItem id={`item`}></DndItem>
+          </Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          <Item></Item>
+          </ItemContainer>
+        ))
+      }
     </Box>
   );
 };

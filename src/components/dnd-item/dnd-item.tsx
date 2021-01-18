@@ -31,50 +31,43 @@ const useStyles = makeStyles({
 
 interface prop {}
 
-const allowDrop = (ev: any) => {
-  ev.preventDefault();
-};
+// const allowDrop = (ev: any) => {
+//   ev.preventDefault();
+// };
 
 const drag = (ev: any) => {
   ev.dataTransfer.setData("text", ev.target.id);
 };
 
-const drop = (ev: any) => {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-};
+// const drop = (ev: any) => {
+//   ev.preventDefault();
+//   var data = ev.dataTransfer.getData("text");
+//   ev.target.appendChild(document.getElementById(data));
+// };
 
 const DndItem: React.FC<any> = (props) => {
   const classes = useStyles();
+  React.useEffect(() => {
+    // console.log("item", props);
+  }, []);
   return (
-    
       <Box
-        className={classes.border}
-        id="div1"
-        onDrop={(e) => drop(e)}
-        onDragOver={(e) => {
-          allowDrop(e);
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.item}
+        draggable="true"
+        id={props.id}
+        onDragStart={(e) => {
+          drag(e);
         }}
       >
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          className={classes.item}
-          draggable="true"
-          id="draggable1"
-          onDragStart={(e) => {
-            drag(e);
-          }}
-        >
+        <Box>
           <Box>
-            <Box>
-              <img src={folder} width="50" height="50" draggable="false" />
-            </Box>
-            <Box display="flex" justifyContent="center">
-              <span>list 2</span>
-            </Box>
+            <img src={folder} width="50" height="50" draggable="false" />
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <span>list 2</span>
           </Box>
         </Box>
       </Box>
