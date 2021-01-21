@@ -48,7 +48,7 @@ const drag = (ev: any) => {
 const DndItem: React.FC<any> = (props) => {
   const classes = useStyles();
   React.useEffect(() => {
-    // console.log("item", props);
+    console.log("item", props);
   }, []);
   return (
       <Box

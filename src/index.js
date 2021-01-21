@@ -11,8 +11,8 @@ import Window from "./views/Window/Window";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/window" component={Window} />
-      <Route exact path="/" component={LoginPage} />
+      <Route exact path="/" component={Window} />
+      <Route exact path="/login" component={LoginPage} />
       <ProtectedRoute path="/layout1" component={Layout1} />
       <Route path="*" component={() => "404 NOT FOUND"} />
     </Switch>

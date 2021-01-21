@@ -47,7 +47,14 @@ const drop = (ev: any) => {
 
 const Item = (props: any) => {
   return (
-    <Grid item xs>
+    <Grid
+      item
+      xs
+      onDoubleClick={() => {
+        console.log("dbclick", props);
+        props.history.push('/login')
+      }}
+    >
       <Box
         height={1}
         onDrop={(e) => drop(e)}
@@ -76,54 +83,107 @@ const ItemContainer = (props: any) => {
 
 const Window: React.FC<any> = (props) => {
   const classes = useStyles();
-  const containers = [];
-  const items = [{ r: 1, c: 2 }];
 
-  for (let i = 0; i < 6; i++) {
-    containers.push(
-      <ItemContainer key={i}>
-        <Item>
-          <DndItem id={`item`}></DndItem>
-        </Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-        <Item></Item>
-      </ItemContainer>
-    );
-  }
+  React.useEffect(() => {
+    console.log("props", props);
+  });
+
+  const containers = [];
+  const items = [
+    [1, null, null, null, null, null, null, null, null, null, null, null, null],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+    [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
+  ];
 
   return (
     <Box height={1} width={1} className={classes.border}>
-      {[
-        1,2,3,4,5,6].map((x, i) => (
-          <ItemContainer key={i}>
-          <Item>
-            <DndItem id={`item`}></DndItem>
-          </Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          <Item></Item>
-          </ItemContainer>
-        ))
-      }
+      {items.map((x, i) => (
+        <ItemContainer key={i}>
+          {x.map((item, i) => {
+            if (item != null) {
+              return (
+                <Item key={`item${i}`} history={props.history}>
+                  <DndItem id={`item`}></DndItem>
+                </Item>
+              );
+            }
+            return <Item key={`item${i}`}></Item>;
+          })}
+        </ItemContainer>
+      ))}
     </Box>
   );
 };
