@@ -45,10 +45,10 @@ const LoginPage: React.FC<any> = (props) => {
         <Box p={8}>
           <form className={classes.root} noValidate autoComplete="off">
             <Box>
-              <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+              <TextField id="outlined-basic" label="Email" variant="outlined" />
             </Box>
             <Box>
-              <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+              <TextField id="outlined-password-input" label="Password" variant="outlined" type="password" />
             </Box>
             <Box textAlign='center'>
               <Button
